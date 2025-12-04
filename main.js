@@ -1,5 +1,5 @@
-﻿/*  Copyright TR 2021
-    Script OS  Copyright (C) 2021 TR
+﻿/*  Copyright nononopmv 2025
+    betaOS Copyright (C) 2025 nononopmv
     Resdistribution is allowed under certain conditions,
     See LICENSE file for details.
 */
