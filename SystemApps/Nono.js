@@ -91,7 +91,8 @@ function Nono(){
         {name: 'BCIT3', src: 'https://video.pmvhaven.com/6923ab03bf9c8c82efb641bf/master.m3u8'},
         {name: 'BCIT4', src: 'https://video.pmvhaven.com/videos/1765065800755_ruegwdmvunq_BCIT4.mp4/master.m3u8'},
         {name: 'BCIT5', src: 'https://video.pmvhaven.com/videos/1765643814024_fezanretd1_BCIT5.mp4/master.m3u8'}, 
-        {name: 'BCIT6', src: 'https://video.pmvhaven.com/videos/1765944924953_nlb8vx2gg6e_BCIT6.mp4/master.m3u8'}
+        {name: 'BCIT6', src: 'https://video.pmvhaven.com/videos/1765944924953_nlb8vx2gg6e_BCIT6.mp4/master.m3u8'}, 
+        {name: 'BCIT7', src: 'https://video.pmvhaven.com/videos/nononopmv_-_BCIT_-_Oral_Training_Part_1_-_Pussy_Worship_1766810988248_ql6rd8bt.mp4/master.m3u8'}
     ];
     var thumbnails = [];
     var bcitlist = document.createElement("div");
@@ -101,8 +102,6 @@ function Nono(){
     ntab.className = 'ntab';
     bcitlist.scroll = true; 
     bcitlist.style.display = 'block';
-    bcitlist.style.height = '100%';
-    bcitlist.style.width = '100%';
     bcitlist.id = 'BCIT';
     bcitlist.name = 'BCIT';
     bcitlist.className = "ntabcontent";
@@ -136,8 +135,6 @@ function Nono(){
 var clipsList = document.createElement("div");
 clipsList.scroll = true; 
 clipsList.style.display = 'block';
-clipsList.style.height = '100%';
-clipsList.style.width = '100%';
 clipsList.id = 'Clips';
 clipsList.name = 'Clips';
 clipsList.className = "ntabcontent";

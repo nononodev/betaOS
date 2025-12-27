@@ -47,6 +47,7 @@ function betaNet(){
     minimize.className = "appheadbutt";
 
     appbody.className = 'appbody';
+    appbody.style.overflow = 'hidden';
 
     headtextdiv.append(appheadtext);
     apphead.append(headtextdiv);
@@ -125,10 +126,7 @@ function betaNet(){
 
     // Iframe - below the nav bar, accounting for top space
     var nview = document.createElement('iframe');
-    nview.style.width = '100%';
-    nview.style.height = 'calc(100% - 40px)';
     nview.style.marginTop = '40px'; // pushes iframe below the nav bar
-    nview.style.border = 'none';
     nview.sandbox = 'allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox';
 
     appbody.appendChild(nview);
@@ -212,12 +210,7 @@ function betaNet(){
             var sites = [
                 {name: 'JSFiddle', url: 'https://jsfiddle.net'},
                 {name: 'NudeVista', url: 'https://nudevista.com/'},
-                {name: 'Glitch', url: 'https://glitch.com'},
-                {name: 'Replit', url: 'https://replit.com'},
                 {name: 'nononodev.github.io', url: 'https://nononodev.github.io'},
-                {name: 'MDN Web Docs', url: 'https://developer.mozilla.org'},
-                {name: 'W3Schools', url: 'https://w3schools.com'},
-                {name: 'Stack Overflow', url: 'https://stackoverflow.com'}
             ];
 
             sites.forEach(function(site) {

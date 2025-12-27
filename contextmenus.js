@@ -92,7 +92,7 @@ document.addEventListener("mousedown", e => {
             menuVisible = false;
         }
         menu2.style.left = `${e.pageX}px`;
-        menu2.style.top = `${e.pageY - (menu2.offsetHeight || 200)}px`;
+        menu2.style.top = `${e.pageY - (menu2.offsetHeight || 100)}px`;
         menu2.style.display = "block";
     }
 });

@@ -1,10 +1,10 @@
-﻿/*  Copyright nononopmv 2025
-    betaOS Copyright (C) 2025 nononopmv
+﻿/*  Copyright Nononopmv 2026
+    betaOS Copyright (C) 2026 Nononopmv
     Resdistribution is allowed under certain conditions,
     See LICENSE file for details.
 */
 bootDesktop();
-var betaosversion = "v1.1.5";
+var betaosversion = "v1.1.6";
 var defaultengine;
 var saveddefault = localStorage.getItem("DefaultEngine");
 var savedtheme = localStorage.getItem("theme");
@@ -49,75 +49,92 @@ var saveddesk = localStorage.getItem("saveddesk");
 var savedscripts = localStorage.getItem("savedscripts");
 
 var changelog = `betaOS Changelog:
-.betaOS 1.0.0
-    - betaAssist added
-    - Nononopmv app added
-    - NudVista app added
-    - Settings app added (some features still missing)
-    - New backgrounds added
-    - Themes added
-.betaOS 1.0.1
-    - Theme names changed
-    - More themes added
-    - More backgrounds added
-    - Hypnotube app added (certain site features may not work correctly)
-    - NudeVista updated to make links work, but websites still don't fully show up correctly due to security features they use like cross-origin blocking.
-    - Desktop shortcuts added
-    - New prompts & responses added to betaAssist
-.betaOS 1.0.2
-    - Files app added
-    - AudioPlayer added
-    - RemindMe app added
-    - Mobile[Testing only] support added
-    - betaStore (app store) added
-    - Hypnotube app removed
-.betaOS 1.0.3
-    - New apps added to betaStore
-    - betaStore bug fixes
-    - New randomized notification sounds
-    - App library restructured. Each app is now its own script to reduce load times and lag.
-    - AudioPlayer can now play audio files saved in the Files app
-.betaOS 1.1.0
-    - General settings added
-    - ControlArea added (click the date & time in the lower right corner)
-    - System controls moved to ControlArea
-    - Brightness & volume controls added
-    - NightLight added (changes the display to a warmer color temperature to be easier on your eyes)
-    - Clear theme added
-    - Design improvements, fixes, and tweaks
-    - Bugs squashed (ew)
-    - Clips added to Nononopmv app (more clips coming soon)
-    - Lockscreen redesigned
-    - User settings updated
-    - Custom user icons
-    - New icons for Settings, betaNet, betaStore, ScriptInjector, betaAssist & RemindMe
-    - New apps available in betaStore
-    - Notification center added
-    - Desktop shortcuts can be rearranged/swapped
-    - Confirm before deleting shortcuts
-.betaOS 1.1.1
-    - Download betaOS updates from the Settings app
-    - Titles will show above the cursor when hovering over icons
-    - Bug fixes and other minor improvements
-.betaOS 1.1.2
-    - Slight design tweaks
-    - Minor bug fixes (ew, bugs)
-.betaOS 1.1.3
-    - The navbar can be repositioned through the personalization settings
-    - Shortcuts can now be added and deleted by right clicking on app icons in the App Library, on the Desktop or in the Navbar
-    - Shortcuts page removed from settings
-    - Desktop icons now generate from top to bottom rather than right to left
-    - Windows can't be dragged out of view, they remain within the bounds of your display
-    - BCIT videos in the Nono app are now streamed from PMVHaven
-.betaOS 1.1.4
-    - Settings app and Timer app sizing changed
-    - Bug fixes (ew, bugs)
-.betaOS 1.1.5
-    - Tasks app bug fixes
-    - Files app now has a delete button for each file and lists the file's size
-    - Files in the Files app can now be sorted in a few different ways (sorting also applies to searches)
-    - Nono app has been slightly redesigned to make the video thumbnails not overlap
-    - Bug fixes (ew, bugs)`;
+    .betaOS 1.0.0
+        - betaAssist added
+        - Nononopmv app added
+        - NudVista app added
+        - Settings app added (some features still missing)
+        - New backgrounds added
+        - Themes added
+    .betaOS 1.0.1
+        - Theme names changed
+        - More themes added
+        - More backgrounds added
+        - Hypnotube app added (certain site features may not work correctly)
+        - NudeVista updated to make links work, but websites still don't 
+          fully show up correctly due to security features they use like 
+          cross-origin blocking.
+        - Desktop shortcuts added
+        - New prompts & responses added to betaAssist
+    .betaOS 1.0.2
+        - Files app added
+        - AudioPlayer added
+        - RemindMe app added
+        - Mobile[Testing only] support added
+        - betaStore (app store) added
+        - Hypnotube app removed
+    .betaOS 1.0.3
+        - New apps added to betaStore
+        - betaStore bug fixes
+        - New randomized notification sounds
+        - App library restructured. Each app is now its own script to 
+          reduce load times and lag.
+        - AudioPlayer can now play audio files saved in the Files app
+    .betaOS 1.1.0
+        - General settings added
+        - ControlArea added (click the date & time in the lower right corner)
+        - System controls moved to ControlArea
+        - Brightness & volume controls added
+        - NightLight added (changes the display to a warmer color 
+          temperature to be easier on your eyes)
+        - Clear theme added
+        - Design improvements, fixes, and tweaks
+        - Bugs squashed (ew)
+        - Clips added to Nononopmv app (more clips coming soon)
+        - Lockscreen redesigned
+        - User settings updated
+        - Custom user icons
+        - New icons for Settings, betaNet, betaStore, ScriptInjector, 
+          betaAssist & RemindMe
+        - New apps available in betaStore
+        - Notification center added
+        - Desktop shortcuts can be rearranged/swapped
+        - Confirm before deleting shortcuts
+    .betaOS 1.1.1
+        - Download betaOS updates from the Settings app
+        - Titles will show above the cursor when hovering over icons
+        - Bug fixes and other minor improvements
+    .betaOS 1.1.2
+        - Slight design tweaks
+        - Minor bug fixes (ew, bugs)
+    .betaOS 1.1.3
+        - The navbar can be repositioned through the personalization settings
+        - Shortcuts can now be added and deleted by right clicking on 
+          app icons in the App Library, on the Desktop or in the Navbar
+        - Shortcuts page removed from settings
+        - Desktop icons now generate from top to bottom rather than 
+          right to left
+        - Windows can't be dragged out of view, they remain within 
+          the bounds of your display
+        - BCIT videos in the Nono app are now streamed from PMVHaven
+    .betaOS 1.1.4
+        - Settings app and Timer app sizing changed
+        - Bug fixes (ew, bugs)
+    .betaOS 1.1.5
+        - Tasks app bug fixes
+        - Files app now has a delete button for each file and lists 
+          the file's size
+        - Files in the Files app can now be sorted in a few different 
+          ways (sorting also applies to searches)
+        - Nono app has been slightly redesigned to make the video 
+          thumbnails not overlap
+        - Bug fixes (ew, bugs)
+    .betaOS 1.1.6
+        - Nono app design fixed
+        - BCIT7 added to the Nono app
+        - Window resizing now works from both bottom corners rather 
+          than just the bottom right
+        - Other styling and bug fixes (ew, bugs)`;
 
 var savedbackground = localStorage.getItem('background');
 
@@ -1257,35 +1274,121 @@ function signOut(){
 
     passwordInput.focus();
 }
-//SleepMode
-function sleepMode(){
-    timetxt.style.fontSize = '85px';
-    timetxt.style.textShadow = 'rgba(0,0,0,.5) 5px 5px 5px';
-    timetxt.style.fontFamily = "Arial";
-    timetxt.style.fontSize = '100px';
-    timetxt.style.opacity = '50%';
-    desktopbody.style.color = 'white';
-    desktopbody.style.textAlign = 'center';
-    desktopbody.onkeypress = function(){
-        signIn();
-    };
-    desktopbody.innerHTML = '';
-    desktopbody.appendChild(timetxt);
-    startLockTime();
-    function startLockTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        m = checkLockTime(m);
-        timetxt.innerHTML = h + ":" + m;
-        var t = setTimeout(startLockTime, 500);
+
+(function() {
+    document.body.addEventListener('pointerdown', function(e) {
+        const handle = e.target;
+        if (handle.className === 'bl-handle') {
+            // Existing functionality for bottom left
+            e.preventDefault();
+
+            const app = handle.parentElement;
+            const startX = e.clientX;
+            const startY = e.clientY;
+            const startWidth = app.offsetWidth;
+            const startHeight = app.offsetHeight;
+            const startLeft = app.offsetLeft;
+
+            const move = function(me) {
+                const dx = startX - me.clientX;
+                const dy = me.clientY - startY;
+
+                let w = startWidth + dx;
+                let h = startHeight + dy;
+
+                w = Math.max(300, w);
+                h = Math.max(300, h);
+
+                const widthIncrease = w - startWidth;
+                app.style.left = (startLeft - widthIncrease) + 'px';
+
+                app.style.width = w + 'px';
+                app.style.height = h + 'px';
+            };
+
+            const up = function() {
+                document.removeEventListener('pointermove', move);
+                document.removeEventListener('pointerup', up);
+            };
+
+            document.addEventListener('pointermove', move);
+            document.addEventListener('pointerup', up);
+        }
+
+        // New functionality for bottom right handle
+        if (handle.className === 'br-handle') {
+            e.preventDefault();
+
+            const app = handle.parentElement;
+            const startX = e.clientX;
+            const startY = e.clientY;
+            const startWidth = app.offsetWidth;
+            const startHeight = app.offsetHeight;
+
+            const move = function(me) {
+                const dx = me.clientX - startX; // Change in X
+                const dy = me.clientY - startY; // Change in Y
+
+                let w = startWidth + dx;
+                let h = startHeight + dy;
+
+                w = Math.max(300, w);
+                h = Math.max(300, h);
+
+                app.style.width = w + 'px';
+                app.style.height = h + 'px';
+            };
+
+            const up = function() {
+                document.removeEventListener('pointermove', move);
+                document.removeEventListener('pointerup', up);
+            };
+
+            document.addEventListener('pointermove', move);
+            document.addEventListener('pointerup', up);
+        }
+    });
+
+    function addHandle(app) {
+        if (app.querySelector('.bl-handle')) return;
+
+        // Bottom Left Handle
+        const blHandle = document.createElement('div');
+        blHandle.className = 'bl-handle';
+        blHandle.style.position = 'absolute';
+        blHandle.style.left = '0px';
+        blHandle.style.bottom = '0px';
+        blHandle.style.width = '20px';
+        blHandle.style.height = '20px';
+        blHandle.style.cursor = 'sw-resize';
+        app.appendChild(blHandle);
+
+        // Bottom Right Handle
+        const brHandle = document.createElement('div');
+        brHandle.className = 'br-handle';
+        brHandle.style.position = 'absolute';
+        brHandle.style.right = '0px';
+        brHandle.style.bottom = '0px';
+        brHandle.style.width = '20px';
+        brHandle.style.height = '20px';
+        brHandle.style.cursor = 'se-resize';
+        app.appendChild(brHandle);
     }
 
-    function checkLockTime(i) {
-        if (i < 10) { i = "0" + i; }
-        return i;
-    }
-}
+    document.querySelectorAll('.app').forEach(addHandle);
+
+    new MutationObserver(function(muts) {
+        muts.forEach(function(mut) {
+            mut.addedNodes.forEach(function(node) {
+                if (node.classList && node.classList.contains('app')) {
+                    addHandle(node);
+                } else if (node.classList && node.classList.contains('settapp')) {
+                    addHandle(node);
+                }
+            });
+        });
+    }).observe(document.body, { childList: true, subtree: true });
+})();
 
 //Context Menu 1
 var conmenu1 = document.getElementById('menu');

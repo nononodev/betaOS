@@ -1218,15 +1218,10 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .appbody{
-    /* Absolutely position the textarea inside the note so it
-       matches the note body size immediately at creation. */
     position: absolute;
     left: 0;
     right: 0;
     bottom: 10px;
-    /* header height (40px) + header vertical padding (10px top + 10px bottom) = 60px */
-    /*top: 40px;*/
-    /* leave space at bottom for resize handle */
     padding: 2.5px;
     height: calc(100% - 70px);
     box-sizing: border-box;
@@ -1517,33 +1512,23 @@ textarea{
     flex-wrap: wrap;
 }
 
-::-webkit-resizer {
-    border-width: 15px;
-    width: 15px;
-    height: 15px;
-    margin-top: 15px;
-    border-style: solid;
-    border-color: transparent blue blue blue;
-    background-color: rgba(0, 0, 0, .25);
-  }
-
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-    margin-bottom: 20px;
+    width: 10px;
+    border-radius: 25px;
   }
   
   ::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, .25);
+    border-radius: 25px;
   }
    
   ::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 15px;
+    background: #2b0000; 
+    border-radius: 25px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #6a0000; 
   }
 
 #actionarea {
@@ -1689,10 +1674,9 @@ button{
     display: none;
     border-style: none;
     overflow-y: scroll;
-    height: 90%;
-    overflow-x: hidden;
     width: 100%;
-    font-size: 15px;
+    height: calc(100% - 40px);
+    overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-shadow: rgba(0, 0, 0, .25) 0 0 5px 5px;
@@ -1737,9 +1721,9 @@ button{
     display: none;
     border-style: none;
     overflow-y: scroll;
-    height: 90%;
+    width: 100%;
+    height: calc(100% - 40px);
     overflow-x: hidden;
-    width: calc(100% - 10px);
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-shadow: rgba(0, 0, 0, .25) 0 0 5px 5px;
@@ -1747,14 +1731,17 @@ button{
 
 
 iframe{
-    width: 100%;
-    height: calc(100% - 10px);
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
     border-style: none;
     background-color: inherit;
     resize: none;
+    overflow-y: visible;
+    overflow-x: hidden;
     /* Absolutely position the textarea inside the note so it
        matches the note body size immediately at creation. */
     position: absolute;
+    margin: 10px;
     top: 0;
     left: 0;
     right: 0;

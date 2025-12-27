@@ -177,31 +177,6 @@ function Settings(){
     appbody.appendChild(usersett);
     appbody.appendChild(generalsettings);
 
-    basssett.className = 'tabcontent';
-    basssett.id = 'betaAssist';
-    var basstext = document.createElement("h1");
-    var voiceopttxt = document.createElement('h2');
-    var voiceoptbox = document.createElement('label');
-    var voiceopt = document.createElement('input');
-    var voptslide = document.createElement('span');
-    basstext.innerHTML = 'betaAssist Settings';
-    voiceopttxt.innerHTML = 'Voice Over: ';
-    voiceoptbox.class = 'switch';
-    voiceopt.type = 'checkbox';
-    voptslide.class = 'slider';
-    voiceopt.checked = false;
-    if(voiceopt.checked == true){
-        voiceActive = true;
-    } else if (voiceopt.checked == false){
-        voiceActive = false;
-    }
-    basssett.appendChild(basstext);
-    basssett.appendChild(voiceopttxt);
-    voiceoptbox.appendChild(voiceopt);
-    voiceoptbox.appendChild(voptslide);
-    basssett.appendChild(voiceoptbox);
-    appbody.appendChild(basssett);
-
     usersett.id = 'User';
     usersett.className = 'tabcontent';
 
@@ -324,7 +299,7 @@ function Settings(){
     changePassBtn.style.padding = '12px 30px';
     changePassBtn.style.fontSize = '18px';
     changePassBtn.style.display = 'block';
-    changePassBtn.style.margin = '10px auto';
+    changePassBtn.style.margin = '20px auto';
     changePassBtn.onclick = function() {
         var newPass = newPassInput.value;
         var confirmPass = confirmPassInput.value;
@@ -342,15 +317,6 @@ function Settings(){
         confirmPassInput.value = '';
     };
     usersett.appendChild(changePassBtn);
-
-    var passWarn = document.createElement('p');
-    passWarn.innerText = 'Note: Password only applies to lock screen.';
-    passWarn.style.fontSize = '14px';
-    passWarn.style.opacity = '0.8';
-    passWarn.style.margin = '30px auto 0 auto';
-    passWarn.style.textAlign = 'center';
-    passWarn.style.maxWidth = '300px';
-    usersett.appendChild(passWarn);
 
     backgroundsettings.scroll = true;
     backgroundsettings.style.overflow = 'scroll';
@@ -583,26 +549,26 @@ function Settings(){
     about.id = "About" ;
 
     var betaOStxt = document.createElement('h1');
-    var browserversion = document.createElement('h1');
-    var copyright = document.createElement('h1');
+    var browserversion = document.createElement('p');
+    var copyright = document.createElement('p');
     var logoimg = document.createElement('img');
     var logoimg2 = document.createElement('img');
     app.style.color = 'white';
     browserversion.innerHTML = objbrowserName + ": " + objfullVersion;
     betaOStxt.innerHTML = "betaOS " + betaosversion;
-    copyright.innerHTML = "© nononopmv 2025";
+    copyright.innerHTML = "© Nononopmv 2026";
     logoimg.src = 'images/beta.png';
     logoimg.style = 'height: 150px';
     logoimg2.src = 'images/Nono.png';
     logoimg2.style = 'height: 150px';
+    about.appendChild(betaOStxt);
     about.appendChild(logoimg);
     about.appendChild(logoimg2);
-    about.appendChild(betaOStxt);
     about.appendChild(copyright);
     about.appendChild(browserversion);
 
     // Update check button moved to About tab
-    var updateH2 = document.createElement('h2');
+    var updateH2 = document.createElement('h1');
     updateH2.innerText = 'Updates';
     about.appendChild(updateH2);
     var updateBtn = document.createElement('button');
@@ -691,18 +657,13 @@ function Settings(){
     appbody.appendChild(changelogsett);
     changelogsett.id = "Changelog";
     changelogsett.className = "tabcontent";
+    changelogsett.style.textAlign = 'left';
+    changelogsett.style.fontSize = '11px';
+    changelogsett.style.whiteSpace = 'pre';  // Preserve whitespace and line breaks
+    changelogsett.style.paddingBottom = '5px'; // Add padding to the bottom
+    changelogsett.textContent = changelog + `\n\n\n`; // Preserve exact format
 
-    var changelogtext = document.createElement('textarea');
-    changelogtext.value = changelog;
-    changelogtext.style.width = '100%';
-    changelogtext.style.fontSize = '16px';
-    changelogtext.style.height = 'calc(100% - 20px)';
-    changelogtext.style.color = 'white';
-    changelogtext.style.backgroundColor = 'inherit';
-    changelogtext.style.border = 'none';
-    changelogtext.readOnly = true;
-    changelogtext.style.resize = 'none';
-    changelogsett.appendChild(changelogtext);
+
 }
 
 function openSett(evt, pageName) {
