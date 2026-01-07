@@ -182,18 +182,7 @@ function Files(){
                 var arrayBuffer = event.target.result;
                 var transaction = db.transaction(["videos"], "readwrite");
                 var store = transaction.objectStore("videos");
-                store.put({ name: file.name, content: arrayBuffer, size: file.size });
-                var blob = new Blob([arrayBuffer], { type: file.type || 'application/octet-stream' });
-                var url = URL.createObjectURL(blob);
-                var a = document.createElement('a');
-                a.href = url;
-                a.download = file.name;
-                a.style.display = 'none';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                alert(`Your ${isVideo ? 'video' : 'audio'} is ready. Please save it into the "betaOS/videos" folder.`);
+                store.put({ name: file.name, content: arrayBuffer, size: file.size, type: file.type });
                 displayFiles();
                 fileInput.value = '';
             };
@@ -252,8 +241,10 @@ function Files(){
                 if (fileData.name.endsWith('.mp3') || fileData.name.endsWith('.wav') || fileData.name.endsWith('.ogg')) {
                     currentAudioContent = fileData.content;
                     AudioPlayer(fileData.name);
-                } else if (fileData.name.endsWith('.mp4') || fileData.name.endsWith('.mov')) {
-                    vidPlay(fileData.name, 'videos/' + fileData.name);
+                } else if (fileData.name.endsWith('.mp4') || fileData.name.endsWith('.avi') || fileData.name.endsWith('.mov')) {
+                    var blob = new Blob([fileData.content], { type: fileData.type || 'video/mp4' });
+                    var url = URL.createObjectURL(blob);
+                    vidPlay(fileData.name, url);
                 } else {
                     alert('File type not supported for playback.');
                 }

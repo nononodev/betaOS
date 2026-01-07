@@ -4,7 +4,7 @@
     See LICENSE file for details.
 */
 bootDesktop();
-var betaosversion = "v1.1.6";
+var betaosversion = "v1.1.7";
 var defaultengine;
 var saveddefault = localStorage.getItem("DefaultEngine");
 var savedtheme = localStorage.getItem("theme");
@@ -134,7 +134,10 @@ var changelog = `betaOS Changelog:
         - BCIT7 added to the Nono app
         - Window resizing now works from both bottom corners rather 
           than just the bottom right
-        - Other styling and bug fixes (ew, bugs)`;
+        - Other styling and bug fixes (ew, bugs)
+    .betaOS 1.1.7
+        - Files app indexing fixed
+        - Other bug fixes (ew, bugs)`;
 
 var savedbackground = localStorage.getItem('background');
 
